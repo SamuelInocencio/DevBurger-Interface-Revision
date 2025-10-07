@@ -34,7 +34,7 @@ width: 100%;
 max-width: 50%;
 
 background: url('${Background}');
-background-color: #1e1e1e;
+background-color: ${(props) => props.theme.cinzaNoturno};
 
 p {
     color: ${(props) => props.theme.white};

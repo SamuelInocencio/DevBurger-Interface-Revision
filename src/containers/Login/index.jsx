@@ -1,4 +1,5 @@
 import Logo from '../../assets/logo.svg';
+import { Button } from '../../components/index';
 import {
   Container,
   Form,
@@ -34,7 +35,7 @@ export function Login() {
             <p></p>
           </InputContainer>
 
-          {/* <Button type="submit">Entrar</Button> */}
+          <Button type="submit">Entrar</Button>
         </Form>
         <p>
           Não possui conta? <a>Clique aqui.</a>
