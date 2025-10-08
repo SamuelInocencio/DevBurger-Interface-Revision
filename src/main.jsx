@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { ToastContainer } from 'react-toastify';
 import { ThemeProvider } from 'styled-components';
 import { Login } from './containers/Login/index.jsx';
 import GlobalStyle from './styles/globalStyles';
@@ -10,6 +11,7 @@ createRoot(document.getElementById('root')).render(
     <ThemeProvider theme={standardTheme}>
       <Login />
       <GlobalStyle />
+      <ToastContainer />
     </ThemeProvider>
   </StrictMode>,
 );
