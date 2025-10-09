@@ -57,7 +57,7 @@ export function Register() {
           validateStatus: () => true,
         },
       );
-      console.log(status);
+
       if (status === 200 || status === 201) {
         setTimeout(() => {
           navigate('/login');
