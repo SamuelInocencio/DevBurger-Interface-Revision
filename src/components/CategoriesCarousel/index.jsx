@@ -10,7 +10,7 @@ export function CategoriesCarousel() {
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+    useEffect(() => {
     async function loadCategories() {
       const { data } = await api.get('/categories');
 
@@ -18,7 +18,7 @@ export function CategoriesCarousel() {
     }
     loadCategories();
   }, []);
-
+ 
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -41,6 +41,7 @@ export function CategoriesCarousel() {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
   return (
     <Container>
       <Title>Categorias</Title>

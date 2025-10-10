@@ -61,6 +61,7 @@ export function Login() {
           }
         }, 2000);
         toast.success('Login Realizado com Sucesso!');
+        localStorage.setItem('token', userData.token);
       } else if (status === 401) {
         toast.error('Dados de login incorretos.');
       } else {
