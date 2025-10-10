@@ -40,27 +40,35 @@ export function Login() {
   });
 
   const onSubmit = async (data) => {
-    const { data: userData } = await toast.promise(
-      api.post('/session', {
-        email: data.email,
-        password: data.password,
-      }),
-      {
-        pending: 'Verificando seus dados',
-        success: {
-          render() {
-            setTimeout(() => {
-              if (userData?.admin) {
-                navigate('/');
-              } else navigate('/');
-            }, 2000);
-
-            return 'Seja Bem-vindo(a)!';
-          },
+    try {
+      const { status, data: userData } = await api.post(
+        '/session',
+        {
+          email: data.email,
+          password: data.password,
         },
-        error: 'Email ou Senha Incorretos',
-      },
-    );
+        {
+          validateStatus: () => true,
+        },
+      );
+
+      if (status === 200 || status === 201) {
+        setTimeout(() => {
+          if (userData?.admin) {
+            navigate('/');
+          } else {
+            navigate('/');
+          }
+        }, 2000);
+        toast.success('Login Realizado com Sucesso!');
+      } else if (status === 401) {
+        toast.error('Dados de login incorretos.');
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      toast.error('Falha no Sistema! Tente novamente mais tarde');
+    }
   };
 
   return (
