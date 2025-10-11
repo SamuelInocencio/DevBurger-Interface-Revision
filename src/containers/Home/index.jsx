@@ -1,4 +1,4 @@
-import { CategoriesCarousel } from '../../components';
+import { CategoriesCarousel, OffersCarousel } from '../../components';
 import { Banner, Container } from './styles';
 
 export function Home() {
@@ -10,7 +10,7 @@ export function Home() {
       <Container>
         <div>
           <CategoriesCarousel />
-          {/* <OffersCarousel /> */}
+          <OffersCarousel />
         </div>
       </Container>
     </main>
