@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { CardProduct } from '../../components';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
 
@@ -60,9 +61,7 @@ export function OffersCarousel() {
         // autoPlaySpeed={5000}
       >
         {offers.map((product) => (
-            <Container key={product.id} imageurl={product.url} >
-                <p>{product.name}</p>
-            </Container>
+          <CardProduct key={product.id} product={product} />
         ))}
       </Carousel>
     </Container>
