@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Home, Login, Register } from '../containers';
+import { Home, Login, Menu, Register } from '../containers';
 
 export const router = createBrowserRouter([
   {
@@ -14,5 +14,13 @@ export const router = createBrowserRouter([
   {
     path: '/cadastro',
     element: <Register />,
+  },
+  {
+    path: '/cardapio',
+    element: (
+      <>
+        <Menu />
+      </>
+    ),
   },
 ]);

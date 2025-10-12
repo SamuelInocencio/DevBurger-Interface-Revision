@@ -15,6 +15,8 @@ export const standardTheme = {
   darkWhite: '#f4f4f4',
   gren: '#61a120',
   cinzaNoturno: '#1e1e1e',
+  cinzaNetro: '#9a9a9d',
+  darkGray: '#696969',
   roadRageFont: '"Road Rage", sans-serif',
   poppinsFont: '"Poppins", sans-serif',
 };
