@@ -1,3 +1,4 @@
+import { use } from 'react';
 import { CategoriesCarousel, OffersCarousel } from '../../components';
 import { Banner, Container } from './styles';
 

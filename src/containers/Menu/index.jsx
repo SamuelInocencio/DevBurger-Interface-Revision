@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { CardProduct } from '../../components/CardProduct';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
@@ -75,7 +75,7 @@ export function Menu() {
           <span>Esse cardápio está irresistível!</span>
         </h1>
       </Banner>
-      <p onClick={() => navigate('/')}>Voltar</p>
+      <Link to={'/'}>Voltar</Link>
       <CategoryMenu>
         {categories.map((category) => (
           <CategoryButton
