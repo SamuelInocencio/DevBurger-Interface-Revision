@@ -1,11 +1,17 @@
 import { createBrowserRouter } from 'react-router-dom';
-
+import { Header } from '../components';
 import { Home, Login, Menu, Register } from '../containers';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <>{<Home />}</>,
+    element: (
+      <>
+        <Header />
+        <Home />
+        {/* <Footer /> */}
+      </>
+    ),
   },
   {
     path: '/login',

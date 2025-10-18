@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import Logo from '../../assets/logo.svg';
 import { Button } from '../../components/index';
+import { useUser } from '../../hooks/UserContext';
 import { api } from '../../services/api';
 import {
   Container,
@@ -18,6 +19,7 @@ import {
 
 export function Login() {
   const navigate = useNavigate();
+  const { putUserData } = useUser();
   const schema = yup
     .object({
       email: yup
@@ -61,15 +63,18 @@ export function Login() {
           }
         }, 2000);
         toast.success('Login Realizado com Sucesso!');
-        localStorage.setItem('token', userData.token);
+        putUserData(userData);
       } else if (status === 401) {
         toast.error('Dados de login incorretos.');
+        
       } else {
         throw new Error();
       }
     } catch (error) {
       toast.error('Falha no Sistema! Tente novamente mais tarde');
+      
     }
+    
   };
 
   return (
