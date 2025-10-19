@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import Background from '../../assets/background.svg';
 import BannerHamburger from '../../assets/banner-hamburger.svg';
 
-export const Container = styled.div`
+export const Container = styled.section`
 width: 100%;
-min-height: 100vh;
+height: 100%;
+
 background-color: ${(props) => props.theme.secondWhite};
 
 background: linear-gradient(rgba(255,255,255, 0.5),rgba(255,255,255, 0.5)),
