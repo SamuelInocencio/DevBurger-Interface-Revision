@@ -62,7 +62,7 @@ export function Menu() {
       setFilteredProducts(newFilteredProducts);
     }
   }, [products, activeCategory]);
-  
+
   return (
     <Container>
       <Banner>
@@ -75,7 +75,6 @@ export function Menu() {
           <span>Esse cardápio está irresistível!</span>
         </h1>
       </Banner>
-      <Link to={'/'}>Voltar</Link>
       <CategoryMenu>
         {categories.map((category) => (
           <CategoryButton
@@ -92,7 +91,6 @@ export function Menu() {
                 },
               );
               setActiveCategory(category.id);
-              
             }}
           >
             {category.name}

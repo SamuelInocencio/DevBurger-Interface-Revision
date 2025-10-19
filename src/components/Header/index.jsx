@@ -18,7 +18,7 @@ export function Header() {
   const { logout, userInfo } = useUser();
 
   const { pathname } = useResolvedPath();
-
+  
   function logoutUser() {
     logout();
     navigate('/login');
