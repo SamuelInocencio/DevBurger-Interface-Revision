@@ -57,7 +57,7 @@ export function Login() {
       if (status === 200 || status === 201) {
         setTimeout(() => {
           if (userData?.admin) {
-            navigate('/');
+            navigate('/admin/pedidos');
           } else {
             navigate('/');
           }
@@ -66,15 +66,12 @@ export function Login() {
         putUserData(userData);
       } else if (status === 401) {
         toast.error('Dados de login incorretos.');
-        
       } else {
         throw new Error();
       }
     } catch (error) {
       toast.error('Falha no Sistema! Tente novamente mais tarde');
-      
     }
-    
   };
 
   return (
