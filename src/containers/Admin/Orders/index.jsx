@@ -69,7 +69,6 @@ export function Orders() {
         (order) => order.status === OrderStatusOptions[statusIndex].value,
       );
 
-      console.log(newFiltredOrders);
       setfilteredOrders(newFiltredOrders);
     }
   }, [orders]);
