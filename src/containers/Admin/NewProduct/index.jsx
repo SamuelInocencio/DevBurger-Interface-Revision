@@ -72,15 +72,15 @@ export function NewProduct() {
     resolver: yupResolver(schema),
   });
   const onSubmit = async (data) => {
-    const newFormData = new FormData();
+    const productFormData = new FormData();
 
-    newFormData.append('name', data.name);
-    newFormData.append('price', data.price * 100);
-    newFormData.append('category_id', data.category.id);
-    newFormData.append('file', data.file[0]);
-    newFormData.append('offer', data.offer);
+    productFormData.append('name', data.name);
+    productFormData.append('price', data.price);
+    productFormData.append('category_id', data.category.id);
+    productFormData.append('file', data.file[0]);
+    productFormData.append('offer', data.offer);
 
-    await toast.promise(api.post('/products', newFormData), {
+    await toast.promise(api.post('/products', productFormData), {
       pending: 'Adicionando produto...',
       success: 'Produto adicionado com sucesso!',
       error: 'Erro ao adicionar produto',
