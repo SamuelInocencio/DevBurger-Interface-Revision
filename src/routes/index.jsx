@@ -10,6 +10,7 @@ import {
   Orders,
   Register,
 } from '../containers';
+import { EditProduct } from '../containers/Admin/EditProduct';
 import { NewProduct } from '../containers/Admin/NewProduct';
 import { Products } from '../containers/Admin/Products';
 import { AdminLayout } from '../layouts/AdminLayout';
@@ -28,7 +29,7 @@ export function Router() {
 
       <Route path="/admin" element={<AdminLayout />}>
         <Route path="/admin/pedidos" element={<Orders />}></Route>
-        {/* <Route path="/admin/editar-produto" element={<EditProduct />}></Route> */}
+        <Route path="/admin/editar-produto" element={<EditProduct />}></Route>
         <Route path="/admin/novo-produto" element={<NewProduct />}></Route>
         <Route path="/admin/produtos" element={<Products />}></Route>
       </Route>
